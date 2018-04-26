@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains job definitions in schema version 2.0 format -->
+
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+
+  <schedule>
+    
+
+    <!--JobTemplate 任务配置-->
+    <job>
+      <!--任务名称-->
+      <name>JobTemplate</name>
+      <!--任务组名称-->
+      <group>JobTemplate</group>
+      <!--任务描述-->
+      <description>Job测试</description>
+      <!--任务执行的方法-->
+      <job-type>QuartzWinService.Jobs.JobTemplate.Work,QuartzWinService</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <trigger>
+      <cron>
+        <!--触发器名称-->
+        <name>JobTemplateTrigger</name>
+        <!--触发器组名称-->
+        <group>JobTemplateTrigger</group>
+        <!--对应的任务名称-->
+        <job-name>JobTemplate</job-name>
+        <!--对应的任务组名称-->
+        <job-group>JobTemplate</job-group>
+        <!--触发器开始时间-->
+        <start-time>2018-01-01T00:00:00+08:00</start-time>
+        <!--触发器执行模式，cron表达式，在线生成工具：http://cron.qqe2.com/-->
+        <cron-expression>0/1 * * * * ? *</cron-expression>
+      </cron>
+    </trigger>
+
+    
+    
+  </schedule>
+</job-scheduling-data>
