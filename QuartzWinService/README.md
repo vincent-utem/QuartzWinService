@@ -26,7 +26,7 @@
 
 单机版WinService服务模板 —— QuartzWinService
 1、配置log4net.config；
-2、配置quartz.config，注意：如要开启分布式布署，需开启SQL存储分布关系；
+2、配置quartz.config，注意：如要开启分布式布署，需开启SQL存储分布关系（数据库脚本/tables_sqlServer.sql）；
 3、在/Jobs目录下，创建业务逻辑目录，该业务逻辑代码将存放在该目录下。如：写一个监控服务，创建/Jobs/Mirror目录；
 4、在上一步创建的业务逻辑目录下，新建Work.cs文件，做为业务启动入口。请参考/Jobs/JobTemplate/Work.cs文件；（注：如果业务比较繁琐，还需创建其它模型文件，建议一并放在该目录下）
 5、代码完成，需在/quartz_jobs.xml新建job节点，具体参考JobTemplate 任务配置；
