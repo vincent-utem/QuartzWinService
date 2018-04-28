@@ -22,7 +22,8 @@ namespace QuartzWinService
 
         Warn = 5,
     }
-
+    //https://blog.csdn.net/liyan530/article/details/77821900
+    //https://www.cnblogs.com/xiekeli/p/4611113.html
     public class PowerLog
     {
         public ILog Logger { get; set; }
